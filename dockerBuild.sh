@@ -9,3 +9,7 @@ cd ..
 cd rust_project
 docker build -t my/rust_project .
 cd ..
+
+cd CSharpProject
+docker build -t my/csharp_project .
+cd ..
