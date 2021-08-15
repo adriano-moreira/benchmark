@@ -12,4 +12,4 @@ FROM ubuntu
 WORKDIR /app
 COPY --from=build /app/bin/dart_project /app/bin/
 
-CMD ["./bin/dart_project"]
+ENTRYPOINT ["./bin/dart_project"]
