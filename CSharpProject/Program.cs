@@ -26,6 +26,7 @@ namespace CSharpProject
         
         static Dictionary<String,Action> _actions = new()
         {
+                ["nothing"] = Nothing.Exec, 
                 ["hello_world"] = HelloWorld.Exec, 
         };
 

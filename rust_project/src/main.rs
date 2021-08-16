@@ -1,7 +1,7 @@
 use std::time::Instant;
 
 const HELLO_WORLD: &str = "hello_world";
-const SUM: &str = "sum";
+const NOTHING: &str = "nothing";
 
 fn main() {
     let args: Vec<String> = std::env::args().collect();
@@ -15,7 +15,7 @@ fn main() {
 fn exec(action: &str) {
     let func = match action {
         HELLO_WORLD => hello_world,
-        SUM => sum,
+        NOTHING => nothing,
         _ => {
             println!("action '{}' not found", action);
             || {}
@@ -35,7 +35,9 @@ fn hello_world() {
     println!("Hello, world!")
 }
 
-fn sum() {
-    let a = 2 + 3;
-    assert_eq!(a, 5)
+fn nothing() {
+    let value = 2 + 2;
+    if value == 5 {
+        print!("value is five")
+    }
 }

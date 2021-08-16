@@ -1,4 +1,5 @@
 abstract class Actions {
+  static const kNothing = 'nothing';
   static const kHelloWorld = 'hello_world';
   static const kSum = 'sum';
 }
@@ -12,6 +13,7 @@ void main(List<String> arguments) {
 }
 
 final actions = <String, Function>{
+  Actions.kNothing: nothing,
   Actions.kHelloWorld: helloWorld,
   Actions.kSum: sum,
 };
@@ -34,6 +36,14 @@ void execWithBenchmark(String action, Function func) {
 
 void helloWorld() {
   print('Hello World!');
+}
+
+/// Do nothing
+void nothing() {
+  final value = 2 + 2;
+  if(value == 5) {
+    print('value is five');
+  }
 }
 
 void sum() {
