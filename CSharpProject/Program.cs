@@ -28,6 +28,7 @@ namespace CSharpProject
         {
                 ["nothing"] = Nothing.Exec, 
                 ["hello_world"] = HelloWorld.Exec, 
+                ["multiply_table"] = MultiplyTable.Exec, 
         };
 
         static void ExecWithBenchmark(String actionName, Action action)

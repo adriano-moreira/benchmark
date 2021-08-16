@@ -1,2 +1,5 @@
-all:
-	bash dockerBuild.sh && bash dockerRun.sh
+all: build run
+build:
+	bash dockerBuild.sh
+run:
+	bash dockerRun.sh

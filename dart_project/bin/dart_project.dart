@@ -1,7 +1,7 @@
 abstract class Actions {
   static const kNothing = 'nothing';
   static const kHelloWorld = 'hello_world';
-  static const kSum = 'sum';
+  static const kMultiplyTable = 'multiply_table';
 }
 
 void main(List<String> arguments) {
@@ -15,7 +15,7 @@ void main(List<String> arguments) {
 final actions = <String, Function>{
   Actions.kNothing: nothing,
   Actions.kHelloWorld: helloWorld,
-  Actions.kSum: sum,
+  Actions.kMultiplyTable: multiplyTable,
 };
 
 void exec(String action) {
@@ -41,12 +41,23 @@ void helloWorld() {
 /// Do nothing
 void nothing() {
   final value = 2 + 2;
-  if(value == 5) {
+  if (value == 5) {
     print('value is five');
   }
 }
 
-void sum() {
-  final a = 2 + 5;
-  assert(a == 5);
+void multiplyTable() {
+  final doTable = (int xLength, int yLength) {
+    final table = List.filled(xLength, List.filled(yLength, 0));
+    for (var x = 0; x < xLength; x++) {
+      for (var y = 0; y < yLength; y++) {
+        table[x][y] = (x + 1) * (y + 1);
+      }
+    }
+    return table;
+  };
+  final table = doTable(1024, 1024);
+  if (table[0][0] == 0) {
+    print('Ops!');
+  }
 }
